@@ -1,0 +1,11 @@
+// Inspired by https://github.com/twigkit/semantic.gs/blob/master/stylesheets/scss/grid.scss
+
+  // Outer row mixin for container rows
+
+  @mixin border-radius($number) {
+    -moz-border-radius: $number;
+    -webkit-border-radius: $number;
+    border-radius: $number;
+  }
+
+  

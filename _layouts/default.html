@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>{{ page.title }}</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
+
+  
+<!-- JS Files -->
+  	<!-- Initialize JS Plugins -->
+    <!-- Latest version of jQuery -->
+  
+
+  	<script src="assets/js/foundation/modernizr.foundation.js"></script>
+
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+
+</head>
+	<body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=213021155398697";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	{% include nav.html %}	
+<!-- Whole Body Div -->
+<div class="row">
+  
+ 
+
+<div class="twelve columns">
+
+<div>
+  {% include facebook-section.html %}
+  {% include slider.html %}
+  
+</div>
+<!-- Main page content -->
+<div class="row">
+
+
+	{{ content }}	
+{% include three-blocks.html %}
+
+<!-- end wrapper -->	
+</div>
+
+
+
+  <!-- End Whole-Body Div -->
+  </div>
+</div>
+
+
+  <!-- Included JS Files (Unminified) -->
+  <!-- [JS Files] -->
+  <!-- We include all the unminified JS as well. Uncomment to use them instead -->
+
+    <script src="assets/js/foundation/jquery.js"></script>
+    <script src="assets/js/foundation/foundation.min.js"></script>
+    <script src="assets/js/foundation/app.js"></script>
+
+    <script type='text/javascript'>
+       $(window).load(function() {
+           $('#featuredContent').orbit({ fluid: '16x6' });
+       });
+    </script>
+
+</body>
+</html>
+
+
