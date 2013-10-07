@@ -10,6 +10,7 @@
     <title>{{ page.title }}</title>
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/plugins/Maximage/lib/css/jquery.maximage.min.css">
     <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 
   <!-- JS Files -->
@@ -23,11 +24,16 @@
   </head>
   <body>
     <div id="fb-root"></div>
+    <div class="contact-us-wrapper">
+      <h3>Contact Us</h3>
+      <p><strong>Store Hours:</strong> Monday- Saturday 10-5:30</p>
+      <p><strong>Phone Number:</strong> (214) 368-5440</p>
+    </div>
     {% include nav.html %}
-    <section id="landing-page">
+    <section id="landing-page" class="page">
       {{ content }}
     </section>
-    <section id="new-arrivals">
+    <section id="new-arrivals" class="page">
       {% include slider.html %}
     </section>
     <!-- Included JS Files (Unminified) -->
@@ -37,11 +43,8 @@
     <script src="assets/js/foundation/foundation.min.js"></script>
     <script src="assets/js/foundation/app.js"></script>
     <script src="assets/js/app.js"></script>
-  <script>
-    $(window).load(function() {
-      $('#featuredContent').orbit({ fluid: '16x6' });
-    });
-  </script>
+    <script src="assets/plugins/Maximage/lib/js/jquery.cycle.all.min.js"></script>
+    <script src="assets/plugins/Maximage/lib/js/jquery.maximage.min.js"></script>
   </body>
 </html>
 
