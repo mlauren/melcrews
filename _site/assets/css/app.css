@@ -6131,6 +6131,7 @@ body .mc-cycle {
 /* line 56, ../sass/_globals.scss */
 #new-arrivals {
   padding-top: 100px;
+  overflow: hidden;
 }
 
 /* line 57, ../sass/_globals.scss */
