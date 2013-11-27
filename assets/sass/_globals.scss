@@ -4,7 +4,7 @@ c/* Requires: normalize.css */
 
   *, *:before, *:after { @include box-sizing(border-box); }
   html { font-size: 62.5%; }
-  body { background: url('../images/background.jpg') repeat; font-family: $bodyFontFamily; font-weight: $bodyFontWeight; font-style: $bodyFontStyle; font-size: ms(0); line-height: 1; color: $bodyFontColor; position: relative; -webkit-font-smoothing: $fontSmoothing; }
+  body { background: url('../images/background.jpg') repeat; margin-top: 27px; font-family: $bodyFontFamily; font-weight: $bodyFontWeight; font-style: $bodyFontStyle; font-size: ms(0); line-height: 1; color: $bodyFontColor; position: relative; -webkit-font-smoothing: $fontSmoothing; }
 
 /* Links ---------------------- */
 
@@ -47,8 +47,9 @@ c/* Requires: normalize.css */
   figure { margin: 0; }
 
 body .mc-cycle { position: absolute !important; }
-.top-bar { position: fixed; top: 0;}
-.contact-us-wrapper { position: fixed; bottom: 20px; left: 20px; padding: 10px; background: $black; color: $white; @include border-radius(10px);
+.top-bar { margin-top: -30px;}
+#landing-page { margin-top: 30px; }
+.contact-us-wrapper { border: 1px solid darken(#ccc, 40%); z-index: 1; position: fixed; bottom: 20px; left: 20px; padding: 10px; background: $black; color: $white; @include border-radius(10px);
   p { margin: 0; }
   h3 { margin: 0; }
 }
