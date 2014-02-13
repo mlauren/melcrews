@@ -1,55 +1,75 @@
-/**
- * Created with JetBrains PhpStorm.
- * User: loganfisher
- * Date: 10/3/13
- * Time: 10:20 PM
- * To change this template use File | Settings | File Templates.
- */
-
-
-
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=213021155398697";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
 // Basic Javascript
 $(function(){
-    // Trigger maximage
-    jQuery('#maximage').maximage();
+  // Trigger maximage
+  jQuery('#maximage').maximage();
+
+
 });
 
-$(window).load(function(){
-    var windowHeight = $(window).height();
-    $('.page').height(windowHeight);
+$(function(){
+  jQuery('#maximage').maximage({
+    cycleOptions: {
+      fx: 'fade',
+      // Speed has to match the speed for CSS transitions
+      speed: 1000, 
+      timeout: 0,
+      prev: '#arrow_left',
+      next: '#arrow_right',
+      pause: 1
+    },
+    onFirstImageLoaded: function(){
+      jQuery('#maximage').fadeIn('fast');
+      jQuery('.image-loader').hide();
+      var ImageHeight  = jQuery('#maximage').height(),
+        num = 55,
+        newImageHeight = ImageHeight + 55;
+      jQuery('#landing-page').height(newImageHeight);
+      jQuery('#new-arrivals').show().css('height', newImageHeight);
+      jQuery('#maximage').css('margin-top', num);
+
+    },
+    // cssBackgroundSize might be causing choppiness in retina display safari
+    cssBackgroundSize: false
+  });
 });
 
 // Init navigation function.
 $('.nav-item').click(function(){
-    var clickedElement = $(this),
-        targetItem = clickedElement.attr('href');
+  var clickedElement = $(this),
+      targetItem = clickedElement.attr('href');
 
-    primary_navigation_animation(clickedElement, targetItem, 800);
+  primary_navigation_animation(clickedElement, targetItem, 800);
 
-    return false;
+  return false;
+});
+
+$(function() {
+  var ImageHeight = $('#maximage').height();
+  setTimeout(function doItAgain() {
+    if (ImageHeight <= 0) {
+      setTimeout(doItAgain, 10);
+      console.log('hello');
+    }
+    else {
+      console.log('hello');
+    }
+  //$('#landing-page').height(ImageHeight);
+  }, 10);
 });
 
 // Function to animate sections of content
 // by clicking a navigational element.
 function primary_navigation_animation(clickedElement, targetItem, speed) {
 
-    var clickedElementClass = clickedElement.attr('id');
+  var clickedElementClass = clickedElement.attr('id');
 
-    clickedElement.addClass(clickedElementClass + '-active');
-    // scrolls the user to the selected navigation item.
-    $('html, body').animate({
-        scrollTop: $(targetItem).offset().top
-    }, speed, function(){
+  clickedElement.addClass(clickedElementClass + '-active');
+  // scrolls the user to the selected navigation item.
+  $('html, body').animate({
+      scrollTop: $(targetItem).offset().top
+  }, speed, function(){
 
-    });
+  });
 }
 
 

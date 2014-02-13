@@ -4,7 +4,7 @@ c/* Requires: normalize.css */
 
   *, *:before, *:after { @include box-sizing(border-box); }
   html { font-size: 62.5%; }
-  body { background: url('../images/background.jpg') repeat; margin-top: 27px; font-family: $bodyFontFamily; font-weight: $bodyFontWeight; font-style: $bodyFontStyle; font-size: ms(0); line-height: 1; color: $bodyFontColor; position: relative; -webkit-font-smoothing: $fontSmoothing; }
+  body { background: url('../images/background.jpg') repeat; font-family: $bodyFontFamily; font-weight: $bodyFontWeight; font-style: $bodyFontStyle; font-size: ms(0); line-height: 1; color: $bodyFontColor; position: relative; -webkit-font-smoothing: $fontSmoothing; }
 
 /* Links ---------------------- */
 
@@ -33,7 +33,6 @@ c/* Requires: normalize.css */
   #map_canvas object { max-width: none; }
 
   .twelve.columns .row {@include border-radius(5px); padding-top: 15px !important;}
-  .top-bar {margin: 0;}
   .panel {background: #00A8C4; @include border-radius(5px); 
       h4 {line-height: 30px; margin-bottom: 20px; color: #063C51; text-shadow: 1px 1px #90D4DD;}
 
@@ -42,17 +41,50 @@ c/* Requires: normalize.css */
       p {font-size: 18px; color: #48275B;}
   }
 
-
+  .fb-like{
+    position:relative;
+    top:-20px; //adjust to your needs
+  }
+  #mc-embedded-subscribe-form { margin: 0; float: left; width: 100%;
+    .columns { padding: 0; }
+    .mc-field-group {
+      label {color: white; font-weight: bold; margin-bottom: 0; padding: 0 18px;}
+      div.columns {margin-top: 14px; height: 35px;
+        input {margin-bottom: 0; height: 35px;}
+      }
+    }
+  }
   /* Reset for strange margins by default on <figure> elements */
   figure { margin: 0; }
 
 body .mc-cycle { position: absolute !important; }
-.top-bar { margin-top: -30px;}
-#landing-page { margin-top: 30px; }
+
+.image-loader {width: 50px; margin: 25% 40%;}
+
+.top-bar { min-height: 62px; line-height: 62px; margin-bottom: 0; 
+  ul { min-height: 62px; 
+    & > li a:not(.button) {
+      height: 62px;
+      line-height: 62px;
+    }
+  }
+}
+#arrow_left, #arrow_right {
+  bottom: 30px;
+  height: 67px;
+  position: absolute;
+  right: 30px;
+  width: 36px;
+  z-index: 1000;
+}
+#arrow_left {
+  margin-right: 46px;
+}
+
 .contact-us-wrapper { border: 1px solid darken(#ccc, 40%); z-index: 1; position: fixed; bottom: 20px; left: 20px; padding: 10px; background: $black; color: $white; @include border-radius(10px);
   p { margin: 0; }
   h3 { margin: 0; }
 }
 
-#new-arrivals { padding-top: 100px; overflow: hidden; }
+#new-arrivals { padding: 100px 0; overflow: hidden; display: none; }
 .new-arrivals-container { background: #000; padding: 10px 10px 5px 10px; position: relative; @include border-radius(10px);  }
